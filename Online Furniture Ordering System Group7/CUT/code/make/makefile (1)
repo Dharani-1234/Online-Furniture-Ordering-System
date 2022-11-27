@@ -1,0 +1,26 @@
+listapp: main.o menu.o customer_fun.o supplier_fun.o validation.o prod_fun.o records.o 
+	gcc -o listapp main.o menu.o customer_fun.o supplier_fun.o validation.o prod_fun.o records.o
+
+main.o:main.c header.h
+	gcc -o main.o -c main.c
+menu.o:menu.c header.h
+	gcc -o menu.o -c menu.c
+
+customer_fun.o:customer_fun.c header.h
+	gcc -o customer_fun.o -c customer_fun.c
+
+supplier_fun.o:supplier_fun.c header.h
+	gcc -o supplier_fun.o -c supplier_fun.c
+
+validation.o:validation.c header.h
+	gcc -o validation.o -c validation.c
+
+prod_fun.o:prod_fun.c header.h
+	gcc -o prod_fun.o -c prod_fun.c
+
+records.o:records.c header.h
+	gcc -o records.o -c records.c
+
+clean:
+	rm*.o
+
