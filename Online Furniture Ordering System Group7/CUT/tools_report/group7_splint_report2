@@ -1,0 +1,55 @@
+Splint 3.1.2 --- 21 Feb 2021
+
+menu.c: (in function maintain_product)
+menu.c:15:17: Return value (type int) ignored: scanf("%d", &ch)
+  Result returned by function call is not used. If this is intended, can cast
+  result to (void) to eliminate message. (Use -retvalint to inhibit warning)
+menu.c:18:34: Return value (type int) ignored: add_product()
+menu.c:20:33: Return value (type int) ignored: edit_product_det...
+menu.c:22:33: Return value (type int) ignored: delete_product()
+menu.c:24:34: Return value (type int) ignored: view_product()
+menu.c: (in function maintain_supplier)
+menu.c:45:17: Return value (type int) ignored: scanf("%d", &ch1)
+menu.c:48:32: Return value (type int) ignored: edit_supplier()
+menu.c:50:32: Return value (type int) ignored: remove_supplier()
+menu.c:52:32: Return value (type int) ignored: view_supplier()
+menu.c:54:32: Return value (type int) ignored: supplier_add_pro...
+menu.c:56:11: Return value (type int) ignored: view_selected_pr...
+menu.c: (in function maintain_customer)
+menu.c:77:17: Return value (type int) ignored: scanf("%d", &ch2)
+menu.c:80:30: Return value (type int) ignored: edit_customer()
+menu.c:82:30: Return value (type int) ignored: remove_customer()
+menu.c:84:30: Return value (type int) ignored: view_customer()
+menu.c: (in function admin_corner)
+menu.c:105:17: Return value (type int) ignored: scanf("%d", &ch3)
+menu.c:108:33: Return value (type int) ignored: maintain_supplier()
+menu.c:110:33: Return value (type int) ignored: maintain_customer()
+menu.c:112:33: Return value (type int) ignored: maintain_product()
+menu.c:114:12: Return value (type int) ignored: display_report()
+menu.c:116:12: Return value (type int) ignored: display_report_i...
+menu.c:118:12: Return value (type int) ignored: display_report_c...
+menu.c: (in function supplier_corner)
+menu.c:138:17: Return value (type int) ignored: scanf("%d", &ch4)
+menu.c:141:33: Return value (type int) ignored: register_supplier()
+menu.c:143:33: Return value (type int) ignored: maintain_supplier()
+menu.c: (in function customer_corner)
+menu.c:164:17: Return value (type int) ignored: scanf("%d", &ch5)
+menu.c:168:14: Return value (type int) ignored: register_customer()
+menu.c:170:14: Return value (type int) ignored: maintain_customer()
+menu.c:172:14: Return value (type int) ignored: order_items()
+menu.c:174:14: Return value (type int) ignored: view_stock()
+menu.c:185:2: Path with no return in function declared to return int
+  There is a path through a function declared to return a value on which there
+  is no return statement. This means the execution may fall through without
+  returning a meaningful result to the caller. (Use -noret to inhibit warning)
+menu.c:5:5: Function exported but not used outside menu: maintain_product
+  A declaration is exported, but not used outside this module. Declaration can
+  use static qualifier. (Use -exportlocal to inhibit warning)
+   menu.c:35:1: Definition of maintain_product
+menu.c:36:5: Function exported but not used outside menu: maintain_supplier
+   menu.c:67:1: Definition of maintain_supplier
+menu.c:68:5: Function exported but not used outside menu: maintain_customer
+   menu.c:95:1: Definition of maintain_customer
+
+Finished checking --- 34 code warnings
+

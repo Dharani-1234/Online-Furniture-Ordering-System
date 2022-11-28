@@ -1,0 +1,38 @@
+==1418114== Syscall param write(buf) points to uninitialised byte(s)
+==1418114==    at 0x49388F3: write (write.c:26)
+==1418114==    by 0x48C9664: _IO_file_write@@GLIBC_2.2.5 (fileops.c:1181)
+==1418114==    by 0x48C89D5: new_do_write (fileops.c:449)
+==1418114==    by 0x48CA708: _IO_new_do_write (fileops.c:426)
+==1418114==    by 0x48CA708: _IO_do_write@@GLIBC_2.2.5 (fileops.c:423)
+==1418114==    by 0x48C9FEF: _IO_file_close_it@@GLIBC_2.2.5 (fileops.c:136)
+==1418114==    by 0x48BD375: fclose@@GLIBC_2.2.5 (iofclose.c:53)
+==1418114==    by 0x10B13B: supplier_list_to_file (in /home/batch94-user17/project/listapp)
+==1418114==    by 0x1092EA: main (in /home/batch94-user17/project/listapp)
+==1418114==  Address 0x4a2865b is 11 bytes inside a block of size 4,096 alloc'd
+==1418114==    at 0x483877F: malloc (vg_replace_malloc.c:307)
+==1418114==    by 0x48BD13B: _IO_file_doallocate (filedoalloc.c:101)
+==1418114==    by 0x48CBA4F: _IO_doallocbuf (genops.c:347)
+==1418114==    by 0x48CBA4F: _IO_doallocbuf (genops.c:342)
+==1418114==    by 0x48CABF7: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:745)
+==1418114==    by 0x48C9CDD: _IO_new_file_xsputn (fileops.c:1244)
+==1418114==    by 0x48C9CDD: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1197)
+==1418114==    by 0x48BE5BC: fwrite (iofwrite.c:39)
+==1418114==    by 0x10B10A: supplier_list_to_file (in /home/batch94-user17/project/listapp)
+==1418114==    by 0x1092EA: main (in /home/batch94-user17/project/listapp)
+==1418114==
+==1418114==
+==1418114== HEAP SUMMARY:
+==1418114==     in use at exit: 672 bytes in 6 blocks
+==1418114==   total heap usage: 20 allocs, 14 frees, 30,128 bytes allocated
+==1418114==
+==1418114== LEAK SUMMARY:
+==1418114==    definitely lost: 0 bytes in 0 blocks
+==1418114==    indirectly lost: 0 bytes in 0 blocks
+==1418114==      possibly lost: 0 bytes in 0 blocks
+==1418114==    still reachable: 672 bytes in 6 blocks
+==1418114==         suppressed: 0 bytes in 0 blocks
+==1418114== Rerun with --leak-check=full to see details of leaked memory
+==1418114==
+==1418114== Use --track-origins=yes to see where uninitialised values come from
+==1418114== For lists of detected and suppressed errors, rerun with: -s
+==1418114== ERROR SUMMARY: 3 errors from 1 contexts (suppressed: 0 from 0)
